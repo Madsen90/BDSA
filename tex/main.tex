@@ -9,41 +9,46 @@
 
 \begin{document}
 \title{Requirements Analysis Document (RAD) for 121Calendar}
+\author{Mads Frederik Madsen - mfrm, Holger Stadel Borum - hstb and Paw Høwsgaard Laursen - pawh}
+\maketitle
 \tableofcontents
 
-\section{Introduction}
-	\subsection{Purpose of the system}
-	\subsection{Scope of the system}
-	\subsection{Objectives and success citeria the project}
-	\subsection{Definitions, acronyms and abbreveations}
-	\subsection{References}
-	\subsection{Overview}
+%\section{Introduction}
+%	\subsection{Purpose of the system}
+%	\subsection{Scope of the system}
+%	\subsection{Objectives and success citeria the project}
+%	\subsection{Definitions, acronyms and abbreveations}
+%	\subsection{References}
+%	\subsection{Overview}
 \section{Current system}
 \section{Proposed system}
-	\subsection{Overview}
-	\subsection{Functional Requirements}
+%	\subsection{Overview}
+%	\subsection{Functional Requirements}
 	\subsection{Nonfunctional Requirements}
-		\subsubsection{Usability}
-		\subsubsection{Reliability}
-		\subsubsection{Performance}
-		\subsubsection{Supportability}
-		\subsubsection{Implementation}
-		\subsubsection{Interface}
-		\subsubsection{Packaging}
-		\subsubsection{Legal}
+		\subsubsection*{}
+		\makebox{\includegraphics[scale=0.8]{docs/NonfunctionalRequirementsCALENDAR.pdf}}
 	\subsection{System models}
 		\subsubsection{Scenarios}
-			
-				\includepdf[scale=0.8,pages=1,pagecommand=\paragraph{Scenario 1: Create Appointment:}]{docs/ScCreateApt.pdf}
+			\paragraph{Scenario 1: Create Appointment:}
+			 -\\
+				\makebox{\includegraphics[scale=0.8]{docs/ScCreateApt.pdf}}
 
-			
-				\includepdf[scale=0.8,pages=1,pagecommand=\paragraph{Scenario 2: Create User:}]{docs/ScCreateUser.pdf}
+			\paragraph{Scenario 2: Create User:}
+			 -\\
+				\makebox{\includegraphics[scale=0.8]{docs/ScCreateUser.pdf}}
 			
 		\subsubsection{Use case model}
 			\includepdf{docs/UMLUsecaseDiagramCALENDAR.pdf}
-		\subsubsection{Object model}
-		\subsubsection{Dynamic model}
-		\subsubsection{User interface}
+			\begin{center}
+				\makebox{\includegraphics[scale=0.7]{docs/UCChangeTime.pdf}}
+				\makebox{\includegraphics[scale=0.7]{docs/UCDeleteAccount.pdf}}
+				\makebox{\includegraphics[scale=0.7]{docs/UCRemoveApt.pdf}}
+			\end{center}
+%		\subsubsection{Object model}
+%		\subsubsection{Dynamic model}
+%		\subsubsection{User interface}
 \section{Glossary}
+	\subsection{Initial Analysis Objects:}
+	\makebox{\includegraphics{docs/InitialAnalysisObjects.pdf}}
 
 \end{document}
