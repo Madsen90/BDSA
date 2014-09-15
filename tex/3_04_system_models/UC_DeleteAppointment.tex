@@ -1,0 +1,22 @@
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{3cm} | p{13cm} |}
+    \hline
+    Use case name: 			& 		DeleteAppointment\\ \hline
+    Participating  			& 		User wants to delete an appointment. \\
+    actors:					& 		\\ \hline
+    Flow of events: 		& 		1. User opens Calender. \\
+							&		2. Calender shows the calender navigation.\\
+							&		3. User selects the appointment he wants to delete.\\
+							&		4. Calender shows the appointment in normal mode that allows changes.\\
+							&		5. User selects delete appointment the wished changes.\\
+							&		6. Calender asks how to handle other potentiel participants (Remove / keep appointment).\\ 
+							&		7. User selects how he wants deletion to be handled.\\ 
+							&		8. Calender changes/deletes the event accordingly and notify other participants.\\\hline
+    Entry condition: 		& 		- User is logged in.  \\ \hline
+	Exit conditions: 		&		- Appointment is deleted/user leaves event.\\
+							&		- User close the system.\\
+							&		- Connection lost.\\\hline
+	Quality requirements	&	 	- None \\\hline
+	Note					&		- It is possible deletion and leaving an appointment should be seperated. It might be easier for the user to understand.\\\hline
+\end{tabu}
+}

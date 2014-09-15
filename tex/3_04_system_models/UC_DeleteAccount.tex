@@ -1,0 +1,22 @@
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{3cm} | p{13cm} |}
+    \hline
+    Use case name: 			& 		DeleteAccount\\ \hline
+    Participating  			& 		User wants to delete her account. \\
+    actors:					& 		\\ \hline
+    Flow of events: 		& 		1. User opens the program. \\
+							&		2. Calender shows the calender navigation.\\
+							&		3. User selects edit profile.\\
+							&		4. Calender shows the profile edit.\\
+							&		5. User select delete account.\\
+							&		6. Calender asks about how to handle appointments with other participant (Delete / Leave).\\
+							&		7. User selects how potentiel appointments with other participants should be handled. \\
+							&		7. Calender deletes account, and notifies other users about changes made to their appointments. \\\hline
+    Entry condition: 		& 		- User is logged in  \\ \hline
+	Exit conditions: 		&		- User account is deleted.\\
+							&		- User close the system.\\
+							&		- Connection lost.\\\hline
+	Quality requirements	&	 	- None \\\hline
+	Note					&	 	- Find a smart way to handle events with other participant, perhaps someone owns an event \\\hline
+\end{tabu}
+}

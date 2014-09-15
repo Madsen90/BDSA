@@ -13,21 +13,30 @@
 \maketitle
 \tableofcontents
 
-%\section{Introduction}
-%	\subsection{Purpose of the system}
-%	\subsection{Scope of the system}
-%	\subsection{Objectives and success citeria the project}
-%	\subsection{Definitions, acronyms and abbreveations}
-%	\subsection{References}
-%	\subsection{Overview}
+\section{Introduction}
+	\subsection{Purpose of the system}
+	We are still thinking about the unique purpose of our system. 
+	While figuring it out, we will describe a pretty generic calender-system. 
+	The main focus will be making it easy to create appointments with other people, 
+	perhaps people you don't know.
+	\subsection{Scope of the system}
+
+	\subsection{Objectives and success citeria the project}
+	
+	\subsection{Definitions, acronyms and abbreveations}
+	
+	\subsection{References}
+	Changes:
+	https://github.com/Madsen90/BDSA/commits/master
+	\subsection{Overview}
 \section{Current system}
 \section{Proposed system}
-%	\subsection{Overview}
-%	\subsection{Functional Requirements}
-	\subsection{Nonfunctional Requirements}
+	\subsection{Overview}
+	\subsection{Functional Requirements}
+	\subsection{Nonfunctional Requirements}				%3_03
 		\subsubsection*{}
-		\makebox{\includegraphics[scale=0.8]{docs/NonfunctionalRequirementsCALENDAR.pdf}}
-	\subsection{System models}
+		\input{3_03_nonfunctional_requirements/noneFuncReq}\\
+	\subsection{System models}							%3_04
 		\subsubsection{Scenarios}
 			\paragraph{Scenario 1: Create Appointment:}
 			 -\\
@@ -37,16 +46,19 @@
 			 -\\
 				\makebox{\includegraphics[scale=0.8]{docs/ScCreateUser.pdf}}
 			
+			Note: We need to figure out how to handle user-relationsship. 
+			It is unlikely everybody able to invite all users. Do we have user-friendship, groups.. etc?
+
 		\subsubsection{Use case model}
 			\includepdf{docs/UMLUsecaseDiagramCALENDAR.pdf}
 			\begin{center}
-				\makebox{\includegraphics[scale=0.7]{docs/UCChangeTime.pdf}}
-				\makebox{\includegraphics[scale=0.7]{docs/UCDeleteAccount.pdf}}
-				\makebox{\includegraphics[scale=0.7]{docs/UCRemoveApt.pdf}}
+				\input{3_04_system_models/UC_EditAppointment}\\
+				\input{3_04_system_models/UC_DeleteAccount}\\
+				\input{3_04_system_models/UC_DeleteAppointment}
 			\end{center}
-%		\subsubsection{Object model}
-%		\subsubsection{Dynamic model}
-%		\subsubsection{User interface}
+		\subsubsection{Object model}
+		\subsubsection{Dynamic model}
+		\subsubsection{User interface}
 \section{Glossary}
 	\subsection{Initial Analysis Objects:}
 	\makebox{\includegraphics{docs/InitialAnalysisObjects.pdf}}
