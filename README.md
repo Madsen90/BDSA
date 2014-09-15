@@ -1,4 +1,4 @@
-BMDS
+BDSS
 ====
 
-BMDS calendar project - mfrm hstb pawh 2014
+BDSS calendar project - mfrm hstb pawh 2014
