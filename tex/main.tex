@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage{enumitem}
+\usepackage{pdfpages}
 \usepackage{tabu}
 
 
@@ -32,7 +33,14 @@
 		\subsubsection{Legal}
 	\subsection{System models}
 		\subsubsection{Scenarios}
+			
+				\includepdf[scale=0.8,pages=1,pagecommand=\paragraph{Scenario 1: Create Appointment:}]{docs/ScCreateApt.pdf}
+
+			
+				\includepdf[scale=0.8,pages=1,pagecommand=\paragraph{Scenario 2: Create User:}]{docs/ScCreateUser.pdf}
+			
 		\subsubsection{Use case model}
+			\includepdf{docs/UMLUsecaseDiagramCALENDAR.pdf}
 		\subsubsection{Object model}
 		\subsubsection{Dynamic model}
 		\subsubsection{User interface}
