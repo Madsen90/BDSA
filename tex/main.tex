@@ -13,56 +13,12 @@
 \maketitle
 \tableofcontents
 
-\section{Introduction}
-	\subsection{Purpose of the system}
-	The unique purpose of our system is to be replace the old fashioned paper calendar. Our system may at first glance look like a pretty generic calender-system, due to it's very simplistic design. It is however very original, since it is the only calendar-system that does not restrict the user in some way. We have focused on making it easy to create appointments with other people, and on giving the user an almost autonomous control over his or her calendar. 
-	\subsection{Scope of the system}
+\input{sections/introduction.tex}
 
-	\subsection{Objectives and success citeria the project}
-	
-	\subsection{Definitions, acronyms and abbreveations}
-	
-	\subsection{References}
-	
-	0.1 - Assignment 37
-	Elementary design, use cases and generic calendar functionality.
+\input{sections/currentsystem.tex}
 
-	Changes:
-	https://github.com/Madsen90/BDSA/commits/master
-	\subsection{Overview}
-\section{Current system}
-\section{Proposed system}
-	\subsection{Overview}
-	\subsection{Functional Requirements}
-	\subsection{Nonfunctional Requirements}				%3_03
-		\subsubsection*{}
-		\input{3_03_nonfunctional_requirements/noneFuncReq}\\
-	\subsection{System models}							%3_04
-		\subsubsection{Scenarios}
-			\paragraph{Scenario 1: Create Appointment:}
-			 -\\
-				\makebox{\includegraphics[scale=0.8]{docs/ScCreateApt.pdf}}
+\input{sections/proposedsystem.tex}
 
-			\paragraph{Scenario 2: Create User:}
-			 -\\
-				\makebox{\includegraphics[scale=0.8]{docs/ScCreateUser.pdf}}
-			
-			Note: We need to figure out how to handle user-relationsship. 
-			It is unlikely everybody able to invite all users. Do we have user-friendship, groups.. etc?
-
-		\subsubsection{Use case model}
-			\includepdf[scale=0.7]{docs/UMLUsecaseDiagramCALENDAR.pdf}
-			\begin{center}	
-				\input{3_04_system_models/UC_CreateAppointment}\\
-				\input{3_04_system_models/UC_EditAppointment}\\
-				\input{3_04_system_models/UC_DeleteAccount}\\
-				\input{3_04_system_models/UC_DeleteAppointment}\\
-			\end{center}
-		\subsubsection{Object model}
-		\subsubsection{Dynamic model}
-		\subsubsection{User interface}
-\section{Glossary}
-	\subsection{Initial Analysis Objects:}
-	\input{4_01_initial_analysis_objects/initial_analysis_objects}
+\input{sections/glossary.tex}
 
 \end{document}
