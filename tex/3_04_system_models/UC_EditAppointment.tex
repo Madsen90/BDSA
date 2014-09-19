@@ -2,14 +2,16 @@
 \begin{tabu}{ | p{3cm} | p{13cm} |}
     \hline
     Use case name: 			& 		EditAppointment\\ \hline
-    Participating  			& 		User wants to edit time and date of an appointment. \\
+    Participating  			& 		User wants to edit date of an appointment. \\
     actors:					&		Other users effected by changes.\\ \hline
     Flow of events: 		& 		1. User opens Calendar. \\
 							&		2. Calendar shows the calendar navigation.\\
 							&		3. User selects the appointment he wants to change.\\
 							&		4. Calendar shows the appointment in normal mode that allows changes.\\
-							&		5. User enters submits the wished changes.\\
-							&		6. Calendar updates the appointment and notify potential participants about the changes.\\ \hline
+							&		5. User selects change date of appointment.\\
+							&		6. Calendar shows the calendar navigation.\\
+							&		7. User selects a new date for the appointment.\\
+							&		8. Calendar updates the appointment, and notify potential participants about the changes and removes participants who sought appointment for the old 			date.\\ \hline
     Entry condition: 		& 		- User is logged in  \\ \hline
 	Exit conditions: 		&		- Appointment is changed.\\
 							&		- User close the system.\\
