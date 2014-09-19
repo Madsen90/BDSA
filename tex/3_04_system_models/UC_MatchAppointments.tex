@@ -1,0 +1,16 @@
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{3cm} | p{13cm} |}
+    \hline
+    Use case name: 			& 		MatchAppointments\\ \hline
+    Participating actors:	& 		Calendar is matching appointments missing people with with people seeking appointment. \\
+ 							&		Users seeking appointment and users looking for appoitnment.\\ \hline
+    Flow of events: 		& 		1. Calendar finds all appointments looking for participants. \\
+							&		2. For each missing participant Calendar searches for a person seeking an appointment.\\
+							&		3. If a match is found, the person is added to the appointment.\\
+							&		4. Calendar notifies all users affected by the changes.\\\hline
+    Entry condition: 		& 		- Calendar runs this procedure x times a day. \\ \hline
+	Exit conditions: 		&		- Calendar has looked through all apppointments.\\\hline
+	Quality requirements	&	 	- None \\\hline
+	Notes					&	 	- We might need a more clever approach, if we as many people getting an appointment as possible \\\hline
+\end{tabu}
+}
