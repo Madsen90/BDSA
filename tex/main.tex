@@ -1,24 +1,30 @@
 \documentclass{article}
 \usepackage[top=1.1in, bottom=1.5in, left=1in, right=1in]{geometry}
 \usepackage{graphicx}
-\usepackage[english]{babel}
+\usepackage[english,danish]{babel}
 \usepackage{enumitem}
 \usepackage{pdfpages}
 \usepackage{tabu}
 \usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \begin{document}
-\title{Requirements Analysis Document (RAD) for 121Calendar}
+\title{Requirements Analysis Document (RAD) for LuckyCalendar}
 \author{Mads Frederik Madsen - mfrm, Holger Stadel Borum - hstb and Paw H\o vsgaard Laursen - pawh}
 \maketitle
 \tableofcontents
 
-\input{sections/introduction.tex}
+\section{Introduction}
+	\input{sections/introduction.tex}
 
-\input{sections/currentsystem.tex}
+\section{Current System}
+	\input{sections/currentsystem.tex}
 
-\input{sections/proposedsystem.tex}
+\section{Proposed system}
+	\input{sections/proposedsystem.tex}
 
-\input{sections/glossary.tex}
+\section{Glossary}
+	\input{sections/glossary.tex}
 
 \end{document}
