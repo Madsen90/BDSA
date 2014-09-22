@@ -7,10 +7,12 @@
     Flow of events: 		& 		1. LuckyCalendar finds all appointments looking for participants. \\
 							&		2. For each missing participant LuckyCalendar searches for a person seeking an appointment.\\
 							&		3. If a match is found, the person is added to the appointment.\\
-							&		4. LuckyCalendar notifies all users added to an appointment, and user who have an appointment where users are added to. User and appointments where no matches has been found, are notified if they are within a certain time limit of the appointment.\\\hline
+							&		4. If no matches are found and the appointment is happening within X days, LuckyCalendar notifies the normal participants and ask them to either delete the appointment or lower the number of wished number of LuckyParticipants.\\
+							&		5. LuckyCalendar notifies all users added to an appointment, and user who have an appointment where users are added to. User and appointments where no matches has been found, are notified if they are within a certain time limit of the appointment.\\\hline
     Entry condition: 		& 		- LuckyCalendar runs this procedure x times a day. \\ \hline
 	Exit conditions: 		&		- LuckyCalendar has looked through all appointments.\\\hline
 	Quality requirements	&	 	- None \\\hline
-	Notes					&	 	- We might need a more clever approach, if we as many people getting an appointment as possible \\\hline
+	Notes					&	 	- We might need a more clever approach, if we as many people getting an appointment as possible \\
+							&		- Need a use case for what happens if there are missing participants. \\\hline
 \end{tabu}
 }
