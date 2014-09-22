@@ -1,0 +1,48 @@
+\subsubsection{Scenarios}
+\textbf{Scenario 1: Create User} \\
+	\input{sections/3_04_system_models/SC_CreateUser_0}\\\\
+\textbf{Scenario 2: Create Appointment} \\
+	\input{sections/3_04_system_models/SC_CreateAppointment_0}\\
+
+\pagebreak
+\subsubsection{Use case model}
+\textbf{UseCases} \\
+	
+	\begin{center}	
+	\includegraphics[scale=0.62]{sections/3_04_system_models/UseCaseDiagram.pdf}\\
+		\input{sections/3_04_system_models/UC_CreateAppointment}\\[1in]
+		\input{sections/3_04_system_models/UC_CreateLuckyAppointment}\\[1in]
+		\input{sections/3_04_system_models/UC_EditAppointment}\\
+		\input{sections/3_04_system_models/UC_DeleteAccount}\\[1in]
+		\input{sections/3_04_system_models/UC_DeleteAppointment}\\
+		\input{sections/3_04_system_models/UC_MatchAppointments}\\[1in]
+		\input{sections/3_04_system_models/UC_NavigateCalendar}\\
+	\end{center}
+	
+\subsubsection{Object model}
+		\input{sections/3_04_system_models/OM_Entities}\\[1in]
+	\begin{center}	
+		\input{sections/3_04_system_models/OM_Control}\\[.2in]
+		\input{sections/3_04_system_models/OM_Boundary}\\
+	\end{center}	
+	\textbf{Class Diagram} \\
+	\center{
+	\includegraphics[scale=0.7]{sections/3_04_system_models/ClassDiagram.pdf}\\
+	}
+	\pagebreak
+
+\subsubsection{Dynamic model}
+
+	\paragraph{Sequence Diagram: Create Appointment Seeking Participants} 
+	\center{
+	\includegraphics[scale=.7]{sections/3_04_system_models/SQ_CreateAppointment.pdf}
+	}
+	\pagebreak
+
+	\paragraph{State Machine Diagram: States of appointment}
+	\center{
+	\includegraphics[scale=.7]{sections/3_04_system_models/SM_Appointment.pdf}
+	}
+\subsubsection{User interface}
+
+\

@@ -1,0 +1,17 @@
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{3cm} | p{13cm} |}
+    \hline
+    ScenarioName: 			& 		HelleAndLarsWantsToPlayBingo\\ \hline
+    Participating 			& 		\underline{Helle} (User) <initiator> \\
+    actors:					&		\underline{Lars} (User) <participant>\\ 
+    						&		\underline{Unknown} (User) <LuckyParticipant> \\
+    						&		\underline{Calendar} (System) \\	\hline
+    Flow of events: 		& 		1. \underline{Helle} and \underline{Lars} wants to play Bingo this Saturday, but they are missing people to play with. \\
+							&		2. \underline{Helle} creates an \underline{appointment} (CreateAppointment) for the event. She enters location, time and description, adds \underline{Lars} and makes room for 4 unknown participants\\
+							&		3. \underline{Calendar} fills up the \underline{appointment} (MatchAppointment) with LuckyParticipants that matches Helles time and area.\\
+							&		4. \underline{Calendar} notifies \underline{Helle} and \underline{Lars} about the Users added to the event, and notifies the Users added to the event with time and place of the appointment.\\
+							&		5. One \underline{unknown user} decides to leave the appointment. \\
+							&		6. \underline{Calendar} goes over step 3 and 4 again.\\
+							&		7. Saturday comes, \underline{Helle} and \underline{Lars} plays bingo with some potentially new friends.\\ \hline
+\end{tabu}
+}

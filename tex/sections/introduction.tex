@@ -1,17 +1,34 @@
-\section{Introduction}
-	\subsection{Purpose of the system}
-	The unique purpose of our system is to be replace the old fashioned paper calendar. Our system may at first glance look like a pretty generic calender-system, due to it's very simplistic design. It is however very original, since it is the only calendar-system that does not restrict the user in some way. We have focused on making it easy to create appointments with other people, and on giving the user an almost autonomous control over his or her calendar. 
-	\subsection{Scope of the system}
+\subsection{Purpose of the system}
+		The purpose of our calendar system is to replace the old fashioned paper calendar with a twist. The calendars client will work on most systems and very basic hardware, and as such it may seem quite simplistic. It will implement basic calendar functionality such as keeping track of your appointments, and invite other users to your appointments etc. 
 
-	\subsection{Objectives and success citeria the project}
-	
-	\subsection{Definitions, acronyms and abbreveations}
-	
-	\subsection{References}
-	
-	0.1 - Assignment 37
-	Elementary design, use cases and generic calendar functionality.
+		However, the calendar stands out in its ability to set up appointments between strangers. This functionality, leaves room for extra unknown participants to be added to an event or appointment by our server. These unknown participants will, in their own calendar, make en "empty" appointment, where they want to be invited to a random event near them. That way people lacking, for instance participants for a street party, a bingo tournament or even a 4th player in a tennis double match, will be able to find their extra people. And people lacking something to do while on a business trip to a foreign city, or simply someone who is bored on a Saturday, will get an invitation to try something new, with new and exiting people.
 
-	Changes:
-	https://github.com/Madsen90/BDSA/commits/master
-	\subsection{Overview}
+		We call it - LuckyAppointments.
+
+\subsection{Scope of the system}
+
+\subsection{Objectives and success citeria the project}
+
+\subsection{Definitions, acronyms and abbreveations}
+
+\subsection{References}
+
+
+Version system:\\
+First decimal increments whenever we have made complete changes. \\
+Second decimal increments for every major change (Not addition).   \\
+Third decimal increments for every minor change or major addition.\\
+
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{1.4cm} | p{1.2cm} | p{1.3cm} | p{2.2cm} | p{7cm} |}
+    \hline
+    Date 		&	Version	& 	Initials			&	Title				&	Description    \\ \hline
+    18/09/14	& 	0.1.0	&	pawh, mrfm, hstb	&	Assignment	37		&	Elementary design, use cases and generic calendar functionality.\\ \hline
+    20/09/14	& 	0.2.0	&	pawh, mrfm, hstb	&	LuckyCalender		&	We have made some major changes to the overall idea of the calendar by adding the idea of LuckyAppointments to the calendar. We have begun on the object analysis of the system.\\ \hline
+    21/09/14	& 	0.2.1	&	hstb			&	Sequence Diagram 	&	Added a sequence diagram and renamed the system to LuckyCalendar, so we know the difference between our system and the calendar.\\ \hline
+    22/09/14	& 	0.2.2	&	hstb			&	State Machine Diagram 	&	Added a state machine diagram for appointment\\ \hline
+\end{tabu}
+}\\\\
+VersionControl for minor changes and additions:
+https://github.com/Madsen90/BDSA/commits/master
+\subsection{Overview}
