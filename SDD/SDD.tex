@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[top=1.1in, bottom=1.5in, left=1in, right=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[english,danish]{babel}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{tabu}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+\title{System Design Document (SDD) for LuckyCalendar}
+\author{Mads Frederik Madsen - mfrm, Holger Stadel Borum - hstb and Paw H\o vsgaard Laursen - pawh}
+\maketitle
+\tableofcontents
+\newpage
+Version system:\\
+First decimal increments whenever we have made complete changes. \\
+Second decimal increments for every major change (Not addition).   \\
+Third decimal increments for every minor change or major addition.\\
+
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{1.4cm} | p{1.2cm} | p{1.3cm} | p{2.2cm} | p{7cm} |}
+    \hline
+    Date 		&	Version	& 	Initials			&	Title				&	Description    \\ \hline
+    02/10/14	& 	0.1.0	&	pawh, mfrm, hstb	&	Assignment	39		&	Sections 1, 3.1 and 3.2\\ \hline
+    
+\end{tabu}
+\newpage
+
+\section{Introduction}
+	\input{sections/introduction.tex}
+	\newpage
+
+\section{Current System architecture}
+	\input{sections/currentsystem.tex}
+	\newpage
+
+\section{Proposed system architecture}
+	\input{sections/proposedsystem.tex}
+	\newpage
+
+\section{Subsystem services}
+	\input{sections/glossary.tex}
+	\newpage
+\section{Glossary}
+
+\end{document}
+
