@@ -62,7 +62,7 @@ Vi vil nok gerne bruge Threads i vores program af overnævnte grunde. Husk fokus
 
 
 
-- Identifying services (4?)
+- Identifying services (4)
 Fokuser på interfacet til datahandler, der opererer både til brugere og til LuckyMAtchFinder.
 
 Interfaces på Datahandler
@@ -79,7 +79,17 @@ Kig evt. på andre services!? Statehandler?
 
 
 
-Identifying Boundary Conditions
+- Identifying Boundary Conditions (3.7)
 Hvordan er LuckyCalendar initialiseret? 
 
-Configuration: hvordan er vores persistent objects created or destroyed. Og har vi det dækket i use-cases?
+Configuration: hvordan er vores persistent objects created or destroyed. Og har vi det dækket i use-cases? 
+APPOINTMENTS, LUCKYAPPOINTMENTS, USERS. LuckyAppointments er måske ikke dækket? evt. opdater de tre use-cases, således der informeres om hvordan data gemmer 
+
+Start-up og shutdown : use-cases for startup, shutdown and configuring for ; Datahandler og LuckyMatchFinder til UML.
+tilføj til description af server/datahandler: When starting up, the MapDBStoreSubsystem detects if it was properly shut down. If not, it performs a consistent check on Maps and Trips and repairs corrupted data if necessary.
+
+Exception handling.
+
+- netværk failure : informer user - luk system? (midlertidig data tabt)
+- server crash : informer user -  luk system (midlertidig data tabt)
+- Client failure : Luk connection.
