@@ -6,12 +6,12 @@ We have identified the following boundary conditions on the client and the serve
 	\begin{enumerate}
 		\item We have found no undefined changes to persistent data in our use cases. All changes to appointments has been accounted for by either the user or the server
 	\end{enumerate}
-	\Item Start-up and Shutdown:
+	\item Start-up and Shutdown:
 	\begin{enumerate}
 		\item We had no use cases which included Start-up or shutdown for either the client or the server. We have added the ServerAdmin actor in our use cases and given him the use case ManageServer which includes starting and shutting down the server. We found it to trivial to describe in greater detail.
 		\item With regards to the clients startup and shutdown, we found it too trivial to make real use cases for it. They are already specified in the Users use cases as entry and exit conditions
 	\end{enumerate}
-	\Item Exception handling:
+	\item Exception handling:
 	\begin{enumerate}
 		\item We have identified the scenario where the client looses connection to the server as the biggest threat in our system. We therefore added functionality for the client to save data locally after loosing connection with the server and synchronize the data when the connection is reestablished. (Operating environment)
 		\item We realize that both the Client and the Server is open for hardware-failures, but we have chosen to address this at a later point, when we know more about the specific hardware that this software will run on (Hardware-failures)
