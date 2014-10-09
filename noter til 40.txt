@@ -83,8 +83,6 @@ UserDataRequester (Brugt af Client)
 
 Kig evt. på andre services!? Statehandler?
 
-Gør det muligt at se andre brugerers kalender!
-
 
 
 
@@ -104,3 +102,10 @@ Exception handling.
 - netværk failure : informer user - luk system? (midlertidig data tabt)
 - server crash : informer user -  luk system (midlertidig data tabt)
 - Client failure : Luk connection.
+
+
+Contracts:
+invariant : Apointment.participants.size > 0;
+Precondition : LuckyParticipants bliver kun kørt hvis det ønskede antal af luckyparticipants - AddedLuckyparticipants er over nul. 
+
+Map exceptions to Contracts.

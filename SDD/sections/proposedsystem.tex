@@ -17,6 +17,7 @@ The rest of the system is divided into View and Control objects. Each View requi
 At this point we have identified three types of views, a NavigatorView that shows calendar navigation, a AppointmentView that shows an appointment, and a login view that allows a guest to log-in and/or create a user. Each view have one of several control objects, which handles the events caused by the user. There might be several View objects for each Control object fx. the NavigateCalender control object could be responsible for MonthView, WeekView, and DayView under the common name NavigatorView. However, the opposite is not true. One view object cannot be controlled by more than one control object. 
 
 \subsection{Hardware/software mapping}
+\input{sections/hardwaremapping.tex}
 Vores system skal køre med en server der kommunikerer med en LocalComputer via internet. Hvilken forbindelse bruger vi til kommunikation? Hvilken slags server? inkl. sql-database?
 
 På den lokale computer foregår ingen udregninger kun indtastning og visning af data. På Serveren kører både et sql databehandlings subsystem, samt et luckyMatchingSystem.
@@ -34,18 +35,10 @@ LuckyAppointment
 luckyMatchingSystem:
 
 \subsection{Persistent data management}
-The client doesn't store anything. The server stores all APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, NOFICATIONS. 
-
-Persistent objects:
-APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, NOTIFICTIONS.
-
-Nogen Persistent boundary objects?
- - user preferences?
-
-Vi vil bruge relational DB 
-
+\input{sections/persistentdata.tex}
 
 \subsection{Access control and security}
+\input{sections/accesscontrol.tex}
 LuckyParticipants have different access than normal Participants. The security requirements for this type of system are not very high.
 
 Skal vi have encryption mellem datahandler og client. nej. Måske til transport af brugernavn og kodeord. ja
@@ -56,8 +49,9 @@ useren er en authenticeret bruger
 
 Access Matrix giver ikke rigtig nogen mening i vores flade struktur, vi kan lave en med user og så alle handlinger. Eneste forskel er Participant og LuckyParticipants adgang til ændring af Appointment.
 
-
+ 
 \subsection{Global software control}
+\input{sections/globalsoftwarecontrol.tex}
 Eftersom vi skriver i et objekt-orienteret sprog og vores program- og databasedesign er meget objekt fokuseret, er procedure-driven control nok en dårlig idé. 
 Event-driven control er en mulighed, men kan give problemer ved vores datahandler, der skal modtage events fra både luckymatchFinder subsystemet og fra de forskellige brugere.
 Vi vil nok gerne bruge Threads i vores program af overnævnte grunde. Husk fokus på testning af threads er svært, men da vores programstruktur og design er relativt simpelt, går det nok.
@@ -65,6 +59,7 @@ Vi vil nok gerne bruge Threads i vores program af overnævnte grunde. Husk fokus 
 Vores client kommer til at bruge event-driven.
 
 \subsection{Boundary conditions}
+\input{sections/boundaryconditions.tex}
 Hvordan er LuckyCalendar initialiseret? 
 
 Configuration: hvordan er vores persistent objects created or destroyed. Og har vi det dækket i use-cases? 
