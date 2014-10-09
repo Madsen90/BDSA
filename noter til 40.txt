@@ -1,0 +1,111 @@
+noter til 40.
+
+- Mapping subsystems to processors and components: (3.3 i SDD)
+
+Vores system skal køre med en server der kommunikerer med en LocalComputer via internet. Hvilken forbindelse bruger vi til kommunikation? Hvilken slags server? inkl. sql-database?
+
+På den lokale computer foregår ingen udregninger kun indtastning og visning af data. På Serveren kører både et sql databehandlings subsystem, samt et luckyMatchingSystem.
+
+Hvilket subsystem styrer kommunikationen mellem Client og database : DataHandler & model's subsystem ConnectionHandler.
+
+Skal vi have kommunikationen som et seperat subsystem mellem datahandler og klient? Nej vel.
+
+DataHandler Subsystem:
+Appointment
+Connection
+User
+LuckyAppointment
+
+luckyMatchingSystem:
+
+
+
+
+- Identifying and Storing Persistent Data (3.4)
+The client doesn't store anything. The server stores all APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, NOFICATIONS. 
+
+Persistent objects:
+APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, NOTIFICTIONS.
+
+Nogen Persistent boundary objects?
+ - user preferences?
+
+Vi vil bruge relational DB 
+
+Vi ønsker at bruge en Object-oriented sql-database.
+
+When should you choose a relational database?
+• Complex queries over attributes
+• Large data set
+When should you choose an object-oriented database?
+• Extensive use of associations to retrieve data
+• Medium-sized data set
+• Irregular associations among objects
+
+
+
+- Providing Access-Control  (3.5)
+LuckyParticipants have different access than normal Participants. The security requirements for this type of system are not very high.
+
+Skal vi have encryption mellem datahandler og client. nej. Måske til transport af brugernavn og kodeord. ja
+
+Authentication af useren skal foregå i klienten.
+opdater design model med user og clienten og encrypteringen af kodeord brugernavn.
+useren er en authenticeret bruger
+
+Access Matrix giver ikke rigtig nogen mening i vores flade struktur, vi kan lave en med user og så alle handlinger. Eneste forskel er Participant og LuckyParticipants adgang til ændring af Appointment.
+
+
+
+- Designing the global control flow (3.6)
+Eftersom vi skriver i et objekt-orienteret sprog og vores program- og databasedesign er meget objekt fokuseret, er procedure-driven control nok en dårlig idé. 
+Event-driven control er en mulighed, men kan give problemer ved vores datahandler, der skal modtage events fra både luckymatchFinder subsystemet og fra de forskellige brugere.
+Vi vil nok gerne bruge Threads i vores program af overnævnte grunde. Husk fokus på testning af threads er svært, men da vores programstruktur og design er relativt simpelt, går det nok.
+
+Vores client kommer til at bruge event-driven.
+
+
+
+- Identifying services (4)
+Fokuser på interfacet til datahandler, der opererer både til brugere og til LuckyMAtchFinder.
+
+Interfaces på Datahandler
+
+AppointmentRequester (brugt af CLient og LuckyMatchFinder)
+
+LuckyAppointmentRequester
+
+DataSaving (brugt af CLient og LuckyMatchFinder) - evt. den samme som appointmentRequester.
+
+UserDataRequester (Brugt af Client)
+
+ //ConnectionManager (brugt af Client)
+
+Kig evt. på andre services!? Statehandler?
+
+
+
+
+- Identifying Boundary Conditions (3.7)
+Hvordan er LuckyCalendar initialiseret? 
+
+Configuration: hvordan er vores persistent objects created or destroyed. Og har vi det dækket i use-cases? 
+APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, notications. LuckyAppointments er måske ikke dækket? evt. opdater de tre use-cases, således der informeres om hvordan data gemmer 
+
+Startet af luckyCalendar
+
+Start-up og shutdown : use-cases for startup, shutdown and configuring for ; Datahandler og LuckyMatchFinder til UML.
+tilføj til description af server/datahandler: When starting up, the MapDBStoreSubsystem detects if it was properly shut down. If not, it performs a consistent check on Maps and Trips and repairs corrupted data if necessary.
+
+Exception handling.
+
+- netværk failure : informer user - luk system? (midlertidig data tabt)
+- server crash : informer user -  luk system (midlertidig data tabt)
+- Client failure : Luk connection.
+
+
+Contracts:
+invariant : Apointment.participants.size > 0;
+Precondition : LuckyParticipants bliver kun kørt hvis det ønskede antal af luckyparticipants - AddedLuckyparticipants er over nul. 
+
+Map exceptions to Contracts.

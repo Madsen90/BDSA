@@ -17,7 +17,20 @@ The rest of the system is divided into View and Control objects. Each View requi
 At this point we have identified three types of views, a NavigatorView that shows calendar navigation, a AppointmentView that shows an appointment, and a login view that allows a guest to log-in and/or create a user. Each view have one of several control objects, which handles the events caused by the user. There might be several View objects for each Control object fx. the NavigateCalender control object could be responsible for MonthView, WeekView, and DayView under the common name NavigatorView. However, the opposite is not true. One view object cannot be controlled by more than one control object. 
 
 \subsection{Hardware/software mapping}
+\input{sections/hardwaremapping.tex}
+
 \subsection{Persistent data management}
+\input{sections/persistentdata.tex}
+
 \subsection{Access control and security}
+\input{sections/accesscontrol.tex}
+
++ access matrix??
+ 
 \subsection{Global software control}
+\input{sections/globalsoftwarecontrol.tex}
+
 \subsection{Boundary conditions}
+\input{sections/boundaryconditions.tex}
+
++ inkluder i use-cases??
