@@ -1,1 +1,24 @@
-Since our system uses the Client-Server pattern, we need an independent server, that stores all data centrally and runs our LuckyMatchFinder algorithm. The server communicates through a http-connection with a user logged on locally through the client subsystem. The connection is handled by the DataHandler subsystem on the server and the Model subsystem on the Client. The DataHandler part on the server encapsulates a SQL-database. The Client is also able to save data locally, if unable to connect to the server. The Model uses a Bridge pattern to apply the different data handling interfaces, these are assigned through an Abstract factory.
+Since our system uses the Client-Server pattern, our software will have to run on two different pieces of hardware. First off, we have the clients - these are not required to be computation heavy machines. They are required to run windows, and in order to get the full functionality of our software, they should be able to connect to the Internet. 
+The server(s) on the other hand, should be fairly quick machines, at least when it comes the internet connection. They are also required to run windows, and should preferably be able to communicate offline with each other in order to keep backup of our data. How this will be implemented in practice is yet to be determined. 
+
+The different responsibilities of the server and client are as follows:
+The Server:
+\begin{itemize}
+	\item Storing all data
+	\item Backing up data
+	\item Running our LuckyMatchFinder algorithm
+	\item Authorizing the clients requests
+\end{itemize}
+The Client:
+\begin{itemize}
+	\item Keeping the local users credentials
+	\item Synchronizing the local calendar with the server
+	\item Saving changes when in a offline state, and later sending them to the server
+	\item Providing the user with an easy-to-access UI
+\end{itemize}
+
+On the server side we will use the subsystem Datahandler to stay connected to the clients through a http-connection. The Client will use the model-subsystem to stay connected to the server. The clients will be logged on locally with after an authorization from the server.
+The servers DataHandler will function as a wrapper class around a SQL-database, through which it will load and save data after request from the client or the LuckyMatchFinder algorithm. 
+
+If a client for some reason should lose connection to the server, it will be able to save the changes locally instead, and will upon reconnection to the server, synchronize these changes with it. The clients model-subsystem uses a bridge pattern to apply the different data handling interfaces, which are assigned though a Strategy pattern which uses an Abstract Factory pattern to create the different data manager classes. 
+The Client will also be able to synchronize with Google Calendar as a secondary server - that is, it will not replace our server, but rather work as a second back up for the user. 
