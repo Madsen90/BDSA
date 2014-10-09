@@ -18,21 +18,6 @@ At this point we have identified three types of views, a NavigatorView that show
 
 \subsection{Hardware/software mapping}
 \input{sections/hardwaremapping.tex}
-Vores system skal køre med en server der kommunikerer med en LocalComputer via internet. Hvilken forbindelse bruger vi til kommunikation? Hvilken slags server? inkl. sql-database?
-
-På den lokale computer foregår ingen udregninger kun indtastning og visning af data. På Serveren kører både et sql databehandlings subsystem, samt et luckyMatchingSystem.
-
-Hvilket subsystem styrer kommunikationen mellem Client og database : DataHandler & model's subsystem ConnectionHandler.
-
-Skal vi have kommunikationen som et seperat subsystem mellem datahandler og klient? Nej vel.
-
-DataHandler Subsystem:
-Appointment
-Connection
-User
-LuckyAppointment
-
-luckyMatchingSystem:
 
 \subsection{Persistent data management}
 \input{sections/persistentdata.tex}
