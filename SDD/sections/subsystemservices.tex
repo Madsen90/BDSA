@@ -1,0 +1,11 @@
+Our system works primarily on the server subsystem, where the connections are handled, where the Appointments, LuckyAppointments, UserData and Notifications are retrieved from  and where the data is saved. Our two other main Subsystems; the LuckyMatchFinder and the Client, only works with their own data retrieved from the server, before again saving it on the server (or locally in case of the Client having no network connection to the server). Those two subsystems does not as such provide any services. 
+
+Server services:
+\begin{enumerate}
+\item ConnectionManager - Used by the Client subsystem to get a Connection to the server.
+\item AppointmentRequester - Used by the Client and LuckyMatchFinder to retrieve the relevant Appointments.
+\item LuckyAppointmentRequester - Used by the Client and LuckyMatchFinder to retrieve the relevant LuckyAppointments.
+\item NotificationRequester - Used by the Client to retrieve Notifications.
+\item UserDataRequester - Used by the Client for retrieving data about users.
+\item DataSaving -  Used by the Client and the LuckyMatchFInder for Saving all data to the server.
+\end{enumerate}
