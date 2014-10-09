@@ -1,3 +1,17 @@
 In our system all users have the same access to the all actions related to their appointment. Users are defined as authenticated users, so the user has already been through the authentication process and can only access its own appointments. All users that have been added normally to an appointment are participants and all have access to edit the appointment. The users added to the the appointment to the LuckyMatchFinder by making a LuckyAppointment are defined as LuckyParticipants and do not have any possibilities to edit the Appointment.\\
 
 We will not encrypt the data transfer of the appointments to between the server and the client, but we wish to encrypt the transfer of the user names by with the password as the key, so that only the user is allowed to his own username and the server then stores the usernames and links them to the relevant appointments, so the authenticated user can access them. \\
+
+No one is allowed to delete an appointment, an appointment is deleted when the last participants leaves. 
+However a participant may remove other participants from an appointment, which in reality gives the power of delete appointment.
+Access matrix for Participants and LuckyParticipants rights for appointment-functionality.
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{3cm} | p{6cm} | p{6cm} |}
+    \hline
+     	 			        & 		Participant         &		LuckyParticipant \\ \hline
+    EditAppointment         &       +					&		-          \\\hline
+    LeaveAppointment        &       +					&		+      \\ \hline
+    RemoveParticipants		&		+					&		- 		\\\hline
+    DeleteAppointment       &       -					&		-        \\  \hline
+\end{tabu}
+}
