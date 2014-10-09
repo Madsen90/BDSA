@@ -1,0 +1,23 @@
+{\tabulinesep=1.2mm
+\begin{tabu}{ | p{3cm} | p{13cm} |}
+    \hline
+    Use case name: 			& 		SynchronizeOfflineChanges\\ \hline
+    Participating  			& 		A Client <Initiator> \\ 
+    						&		The Server <Receiver>  \\\hline
+    Flow of events: 		& 		1. The Client requests authorization with the Server\\
+							&		2. The Client loads the locally saved appointment files\\
+							&		3. The Client sends the loaded data\\
+							&		4. The Server receives the data and updates its database\\
+							&		5. The Server sends update verification on the various changes to the Client\\
+							&		6. The Client receives verification and deletes local files\\ \hline
+    Entry condition: 		& 		- The Client has lost connection to the server\\ 
+    						&		- A User has made changes to the data (i.e. created, deleted or edited appointment(s)) while the client was offline\\
+    						&		- The Client has reconnected to the server\\\hline
+	Exit conditions: 		&		- The Server fails to authorize the clients user credentials\\ 
+							&		- Connection is lost (again) \\
+							&		- The Client is unable to load the locally saved files \\
+							&		- The data has been changed on the server while the client was offline - results in a conflict \\
+							&		- The Client is turned off \\\hline
+	Quality requirements	&	 	- None \\\hline
+\end{tabu}
+}

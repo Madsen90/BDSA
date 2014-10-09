@@ -4,12 +4,13 @@
     Account 				& 		An account keeps track of user information, and may participate or create in an \uline{appointment} or a \uline{luckyAppointment}. \\\hline
 	Appointment				&		A digital representation of an appointment between 1 or more \uline{Users}. It contains a time and a \uline{place} for the appointment, a title and a description for the event.\\\hline
 	LuckyAppointment		&		A representation of the time space, the \uline{user} wishes to join an \uline{appointment} with another \uline{user}. It contains a desired time frame and city.\\\hline
-	ReccuringAppointment	&		An \uline{appointment} that happens several times, \uline{appointments} are created at the time of the ReccuringAppointment. Might have room for lucky participants, but a LuckyAppointment can't be a RecurringAppointment. \\ \hline
+	Reccuring-Appointment	&		An \uline{appointment} that happens several times, \uline{appointments} are created at the time of the ReccuringAppointment. Might have room for lucky participants, but a LuckyAppointment can't be a RecurringAppointment. \\ \hline
     Place 					& 		A digital representation of a space, might be none-existing. It contains a city.\\\hline
 	Calendar				&		An collection of \uline{appointments} for one \uline{account}.\\ \hline
     City 					& 		A digital representation of a city, identified by the postal code.\\\hline
 	LuckyParticipant		&		A user participating an event through a \uline{LuckyAppointment}.\\\hline
 	Participant: 			&		How an \uline{account} (and thereby \uline{user}). Is tied to an appointment.\\\hline
-    User  					& 		User a person who owns an \uline{account} and thereby a \uline{calender}. He is able to create/delete/edit \uline{appointments} and  \uline{luckyAppointments}. \\\hline
+    User  					& 		User a person who owns an \uline{account} and thereby a \uline{calender}. He is able to create/delete/edit \uline{appointments} and  \uline{luckyAppointments}. Must be authorized by the server, otherwise the user is a \uline{Guest} \\\hline
+    Guest					&		A person who is using the system, but is not logged in (i.e. not authorized by the server). A \uline{Guest} is only able to create a new user, or log in \\\hline
 \end{tabu}
 }
