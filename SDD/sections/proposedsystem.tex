@@ -17,7 +17,72 @@ The rest of the system is divided into View and Control objects. Each View requi
 At this point we have identified three types of views, a NavigatorView that shows calendar navigation, a AppointmentView that shows an appointment, and a login view that allows a guest to log-in and/or create a user. Each view have one of several control objects, which handles the events caused by the user. There might be several View objects for each Control object fx. the NavigateCalender control object could be responsible for MonthView, WeekView, and DayView under the common name NavigatorView. However, the opposite is not true. One view object cannot be controlled by more than one control object. 
 
 \subsection{Hardware/software mapping}
+Vores system skal køre med en server der kommunikerer med en LocalComputer via internet. Hvilken forbindelse bruger vi til kommunikation? Hvilken slags server? inkl. sql-database?
+
+På den lokale computer foregår ingen udregninger kun indtastning og visning af data. På Serveren kører både et sql databehandlings subsystem, samt et luckyMatchingSystem.
+
+Hvilket subsystem styrer kommunikationen mellem Client og database : DataHandler & model's subsystem ConnectionHandler.
+
+Skal vi have kommunikationen som et seperat subsystem mellem datahandler og klient? Nej vel.
+
+DataHandler Subsystem:
+Appointment
+Connection
+User
+LuckyAppointment
+
+luckyMatchingSystem:
+
 \subsection{Persistent data management}
+The client doesn't store anything. The server stores all APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, NOFICATIONS. 
+
+Persistent objects:
+APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, NOTIFICTIONS.
+
+Nogen Persistent boundary objects?
+ - user preferences?
+
+Vi vil bruge relational DB 
+
+
 \subsection{Access control and security}
+LuckyParticipants have different access than normal Participants. The security requirements for this type of system are not very high.
+
+Skal vi have encryption mellem datahandler og client. nej. Måske til transport af brugernavn og kodeord. ja
+
+Authentication af useren skal foregå i klienten.
+opdater design model med user og clienten og encrypteringen af kodeord brugernavn.
+useren er en authenticeret bruger
+
+Access Matrix giver ikke rigtig nogen mening i vores flade struktur, vi kan lave en med user og så alle handlinger. Eneste forskel er Participant og LuckyParticipants adgang til ændring af Appointment.
+
+
 \subsection{Global software control}
+Eftersom vi skriver i et objekt-orienteret sprog og vores program- og databasedesign er meget objekt fokuseret, er procedure-driven control nok en dårlig idé. 
+Event-driven control er en mulighed, men kan give problemer ved vores datahandler, der skal modtage events fra både luckymatchFinder subsystemet og fra de forskellige brugere.
+Vi vil nok gerne bruge Threads i vores program af overnævnte grunde. Husk fokus på testning af threads er svært, men da vores programstruktur og design er relativt simpelt, går det nok.
+
+Vores client kommer til at bruge event-driven.
+
 \subsection{Boundary conditions}
+Hvordan er LuckyCalendar initialiseret? 
+
+Configuration: hvordan er vores persistent objects created or destroyed. Og har vi det dækket i use-cases? 
+APPOINTMENTS, LUCKYAPPOINTMENTS, USERS, notications. LuckyAppointments er måske ikke dækket? evt. opdater de tre use-cases, således der informeres om hvordan data gemmer 
+
+Startet af luckyCalendar
+
+Start-up og shutdown : use-cases for startup, shutdown and configuring for ; Datahandler og LuckyMatchFinder til UML.
+tilføj til description af server/datahandler: When starting up, the MapDBStoreSubsystem detects if it was properly shut down. If not, it performs a consistent check on Maps and Trips and repairs corrupted data if necessary.
+
+Exception handling.
+
+- netværk failure : informer user - luk system? (midlertidig data tabt)
+- server crash : informer user -  luk system (midlertidig data tabt)
+- Client failure : Luk connection.
+
+Contracts:
+invariant : Apointment.participants.size > 0;
+Precondition : FindLuckyParticipants bliver kun kørt hvis det ønskede antal af luckyparticipants - AddedLuckyparticipants er over nul. 
+
+Map exceptions to Contracts.
