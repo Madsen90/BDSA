@@ -5,7 +5,7 @@ The Client-system will be made with a Model-View-Controller (MVC) architecture. 
 
 \paragraph{Architecture}
 \begin{center}
-\includegraphics[scale=.4]{sections/Architecture.pdf}
+\includegraphics[scale=.3]{sections/Architecture.pdf}
 \end{center}
 \pagebreak
 
@@ -14,7 +14,13 @@ The MVC architecture gives us three distinct types of subsystems, a model that h
 
 The rest of the system is divided into View and Control objects. Each View requires a Control object, that handles the event-flow of the View. Each Control object has a reference to the ViewHandler, which allows them to create a new View when necessary. \\
 
-At this point we have identified three types of views, a NavigatorView that shows calendar navigation, a AppointmentView that shows an appointment, and a login view that allows a guest to log-in and/or create a user. Each view have one of several control objects, which handles the events caused by the user. There might be several View objects for each Control object fx. the NavigateCalender control object could be responsible for MonthView, WeekView, and DayView under the common name NavigatorView. However, the opposite is not true. One view object cannot be controlled by more than one control object. 
+At this point we have identified three types of views, a NavigatorView that shows calendar navigation, a AppointmentView that shows an appointment, and a login view that allows a guest to log-in and/or create a user. Each view have one of several control objects, which handles the events caused by the user. There might be several View objects for each Control object e.g. the NavigateCalender control object could be responsible for MonthView, WeekView, and DayView under the common name NavigatorView. However, the opposite is not true. One view object cannot be controlled by more than one control object. 
+
+In addition to the MVC-subsystems we will have a ConnectionHandler, whose purpose is to handle the connection between the Server and the Client, and a Synchronize subsystem that synchronizes the servers and clients storages.
+
+\begin{center}
+\includegraphics[scale=.5]{sections/SubsystemDecomposition.pdf}
+\end{center}
 
 \subsection{Hardware/software mapping}
 \input{sections/hardwaremapping.tex}
