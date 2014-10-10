@@ -18,6 +18,10 @@ The Client:
 	\item Providing the user with an easy-to-access UI
 \end{itemize}
 
+\begin{center}
+\includegraphics[scale=.8]{sections/hardwaremapping.pdf}
+\end{center}
+
 On the server side we will use the subsystem Datahandler to stay connected to the clients through a http-connection. The Client will use the model-subsystem to stay connected to the server. The clients will be logged on locally with after an authorization from the server.
 The servers DataHandler will function as a wrapper class around a SQL-database, through which it will load and save data after request from the client or the LuckyMatchFinder algorithm. 
 
