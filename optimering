@@ -1,0 +1,14 @@
+Optimization:
+Optimize the object model by using the optimization principles listed in the [OOSE] book (section 10.4.1 p. 402ff). In particular you should identify optimization possibilities by using the Proxy design pattern and by exploring a caching technique.
+
+We consider our two most expensive/slow operations retrieval of Appointments over network and LuckyAppointmentMatcher.
+Since we do not know how LuckyAppointmentMatcher works we do not see any way to optimize it. 
+The choice that it is only run x times a day can be seen as some sort of optimization.
+
+So the operations we have left is retrieval of Appointments over the network.
+After speaking with TA's we did not find the proxy-pattern relevant. 
+We could try to make two request one smaller first retrieving a smaller set of appointmentData, which is needed to show the appointments in a View.
+But we came to the conclusion that the bottleneck probably is not the amount of data that would delay the system, but the connection time.
+In stead we chose to cache the latest requested appointments, if a new request is within the range of the previous we do not request a new set from the server.
+We could also always make a request to the local storage in order to see if there is any appointments we could show. 
+But the design with the strategy-pattern choosing our current storage, is not compatible with this solution, unless it is altered in some way. 
