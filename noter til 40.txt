@@ -107,5 +107,9 @@ Exception handling.
 Contracts:
 invariant : Apointment.participants.size > 0;
 Precondition : LuckyParticipants bliver kun kørt hvis det ønskede antal af luckyparticipants - AddedLuckyparticipants er over nul. 
+Post-condition: 
+RemoveParticipants
+AddLuckyParticipants : AddedLuckyparticipants -luckyparticipants  er ikke over nul. 
+
 
 Map exceptions to Contracts.
