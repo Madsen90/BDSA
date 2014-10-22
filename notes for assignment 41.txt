@@ -1,0 +1,12 @@
+notes for assignment 41
+
+Appointment has the invariant of always having at least 1 participant and that luckyParticipants.COunt must not be higher than the wished number of LuckyPartipants.
+Relevant pre- and post-conditions added to the methods setWishedNumberOfLuckyParticipants, addLuckyParticipant, as well as to removeLuckyParticipant, addParticipant and removeParticipant.
+
+ViewHandler always has a view. postcondition added to SelectView
+
+Recurring appoinment always has an appointment. Appointments in the list always has the same city and the dateFrom and dateTo is within the timespan of the reccuring appointment.
+
+AddAppointment and 
+RemoveAppointment 
+added with relevant pre- and postconditions.
