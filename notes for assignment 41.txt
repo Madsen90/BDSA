@@ -1,12 +1,26 @@
-notes for assignment 41
+As all the improvements we have made during this assignment have been additions or changes to our already existing models, we have found it necessary and helpful to document all of these actions, and are including these documentations here.
 
-Appointment has the invariant of always having at least 1 participant and that luckyParticipants.COunt must not be higher than the wished number of LuckyPartipants.
-Relevant pre- and post-conditions added to the methods setWishedNumberOfLuckyParticipants, addLuckyParticipant, as well as to removeLuckyParticipant, addParticipant and removeParticipant.
+We have not been able to identify any places, where our interfaces were not already separated from the classes. We have identified a few missing operations from the Appointment and ReccuringAppointment class and added those, we found no missing attributes.
 
-ViewHandler always has a view. postcondition added to SelectView
+We have added Invariants for Appointment, RecurringAppointment and Viewhandler. Appointment has the invariant of always having at least 1 participant and that _luckyParticipants.Count must not be higher than the wished number of LuckyPartipants. ViewHandler must always have a view. RecurringAppoinment always has at least 2 appointments, and those appointments has the same place, city and description values as the RecurringAppointment, and the dateFrom and dateTo of each Appointment is within the timespan of the reccuring appointment.
 
-Recurring appoinment always has an appointment. Appointments in the list always has the same city and the dateFrom and dateTo is within the timespan of the reccuring appointment.
+Pre- and post-conditions were added to the methods: SetWishedNumberOfLuckyParticipants, AddLuckyParticipant, RemoveLuckyParticipant, AddParticipant and RemoveParticipant of the Appointment class. Postcondition added to SelectView of the Viewhandler Class. 
+Relevant pre- and post-conditions added to the methods AddAppointment and RemoveAppointment of RecurringAppointment.
 
-AddAppointment and 
-RemoveAppointment 
-added with relevant pre- and postconditions.
+We have mapped exceptions for all the pre- and post-conditions and invariants, and created appropriate Exception classes for these.
+
+We have implemented our UML associations using the techniques from OOSE.
+
+We have optimized our object model using the optimization principles from the OOSE book.
+
+We considered our two most expensive/slow operations to be the retrieval of Appointments over network and our LuckyAppointmentMatcher.
+Since we do not know how LuckyAppointmentMatcher works yet we do not see any way to optimize it. 
+The choice that it is only run x times a day can be seen as some sort of optimization.
+
+So the operations we have left is retrieval of Appointments over the network.
+
+After speaking with TA's we did not find the proxy-pattern relevant.  We could try to make two request one smaller first retrieving a smaller set of appointmentData, which is needed to show the appointments in a View, but we came to the conclusion that the bottleneck probably is not the amount of data that would delay the system, but the connection time. Instead we chose to cache the latest requested appointments, if a new request is within the range of the previous we do not request a new set from the server.
+
+We could also always make a request to the local storage in order to see if there is any appointments we could show, but the design with the strategy-pattern choosing our current storage, is not compatible with this solution, unless it is altered in some way. 
+
+Finally, we have mapped OO design to a DB model, as seen in the db_mapping.vsdx-file.
