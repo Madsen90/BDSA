@@ -23,4 +23,4 @@ After speaking with TA's we did not find the proxy-pattern relevant.  We could t
 
 We could also always make a request to the local storage in order to see if there is any appointments we could show, but the design with the strategy-pattern choosing our current storage, is not compatible with this solution, unless it is altered in some way. 
 
-Finally, we have mapped OO design to a DB model, as seen in the db_mapping.vsdx-file.
+Finally, we have mapped OO design to a DB model, as seen in figure 2 in the "Persistant data" chapter in the SDD.
