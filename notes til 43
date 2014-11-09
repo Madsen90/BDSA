@@ -1,0 +1,21 @@
+Integration testing:
+
+after having tested all relevant components we move to testing the different components together. To do this effectively we use a bottom-up
+
+We use the bottom-up testing strategy because much of our components are decentralized and covered by the component testing, with the bottom-up strategy we can test 
+
+luckyMatchFinder is an independent system
+
+
+View & Controller
+
+Model
+
+Database   - ConnectionHandler
+
+
+Triple test model connectionHandler Storage Handler 
+Sync
+
+Enteties 
+
